@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: prabhatdemojenkins 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prabhatdemojenkins
+  template:
+    metadata:
+      labels:
+        app: prabhatdemojenkins 
+    spec:
+      containers:
+        - name: prabhatdemojenkins 
+          image: myfirstappcontainerregistry.azurecr.io/prabhatdemojenkins
+          ports:
+          - containerPort: 8081
